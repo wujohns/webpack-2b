@@ -9,10 +9,33 @@ const packageConfig = {
     version: '0.0.1',
     author: 'wujohns',
     description: 'a wrap of webpack for libs packing',
+    homepage: 'https://github.com/wujohns/webpack-2b',
     license: 'MIT',
 
     /**
-     * scripts
+     * repo
+     */
+    repository: {
+        type: 'git',
+        url: 'https://github.com/wujohns/webpack-2b.git'
+    },
+
+    /**
+     * keywords
+     */
+    keywords: [
+        'webpack', 'webpack-2b', 'gulp', 'libspack'
+    ],
+
+    /**
+     * bugs
+     */
+    bugs: {
+        url: 'https://github.com/wujohns/webpack-2b/issues'
+    },
+
+    /**
+     * scripts todo
      */
     scripts: {
         // test: './node_modules/mocha/bin/mocha ./test/build.test.js'
@@ -23,7 +46,7 @@ const packageConfig = {
     },
 
     dependencies: {
-        // 基础库
+        // basic modules
         'lodash': '^4.17.4',
         'async': '^2.5.0',
         'string-hash': '^1.1.3',
@@ -32,7 +55,9 @@ const packageConfig = {
         'webpack': '^3.4.1'
     },
 
-    devDependencies: {}
+    devDependencies: {
+        'uglifyjs-webpack-plugin': '^0.4.6'
+    }
 };
 
 const fs = require('fs');

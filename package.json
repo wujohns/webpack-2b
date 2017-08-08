@@ -1,0 +1,34 @@
+{
+  "name": "webpack-2b",
+  "version": "0.0.1",
+  "author": "wujohns",
+  "description": "a wrap of webpack for libs packing",
+  "homepage": "https://github.com/wujohns/webpack-2b",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wujohns/webpack-2b.git"
+  },
+  "keywords": [
+    "webpack",
+    "webpack-2b",
+    "gulp",
+    "libspack"
+  ],
+  "bugs": {
+    "url": "https://github.com/wujohns/webpack-2b/issues"
+  },
+  "scripts": {},
+  "engine": {
+    "node": ">=4.0.0"
+  },
+  "dependencies": {
+    "lodash": "^4.17.4",
+    "async": "^2.5.0",
+    "string-hash": "^1.1.3",
+    "webpack": "^3.4.1"
+  },
+  "devDependencies": {
+    "uglifyjs-webpack-plugin": "^0.4.6"
+  }
+}
