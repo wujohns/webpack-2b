@@ -4,12 +4,11 @@
  * @author wujohns
  * @date 17/8/8
  */
-'use strict';
 
 import async from 'async';
 
 async.map([1000, 2000, 3000], function (delay, callback) {
-    setTimeout(() => {
+    setTimeout(function () {
         console.log(delay);
         return callback(null, delay);
     }, delay);
