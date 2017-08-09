@@ -136,7 +136,7 @@ class Webpack2B {
      * @param {String} pagesConfig.[pages].dest - the custom name of the page
      * @param {Object} pagesConfig.externals - the externals lib which will not be packed into the dest file
      * @param {Object} webpackConfig - custom webpack config except entry, output and externals
-     * @param {Function} callback - 回调函数
+     * @param {Function} callback - callback function
      */
     static pagesPack (pagesConfig, webpackConfig, callback) {
         if (typeof webpackConfig === 'function') {

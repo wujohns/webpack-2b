@@ -6,7 +6,7 @@
 const packageConfig = {
     // 基础说明配置
     name: 'webpack-2b',
-    version: '0.0.1',
+    version: '0.0.2',
     author: 'wujohns',
     description: 'a wrap of webpack for libs packing',
     homepage: 'https://github.com/wujohns/webpack-2b',
