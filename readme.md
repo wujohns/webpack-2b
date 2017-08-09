@@ -90,18 +90,18 @@ packing the libs file
 `callback` - Function, callback funcion  
 
 ### pagesPack(pagesConfig, [webpackConfig], callback)  
-packing the page files
+packing the page files  
 `pagesConfig` - Object, pages packing config  
-`pagesConfig.pages` - Array, the config array, each item is the config of a page
-`pagesConfig.[pages].src` - String, the source path of the pages
-`pagesConfig.[pages].dest` - String, the custom name of the page
-`pagesConfig.externals` - Object, the externals lib which will not be packed into the dest file
-`webpackConfig` - String, custom webpack config except entry and output, excepts entry, output, externals  
+`pagesConfig.pages` - Array, the config array, each item is the config of a page  
+`pagesConfig.[pages].src` - String, the source path of the pages  
+`pagesConfig.[pages].dest` - String, the custom name of the page  
+`pagesConfig.externals` - Object, the externals lib which will not be packed into the dest file  
+`webpackConfig` - String, custom webpack config except entry and output, excepts entry, output, externals   
 `callback` - Function, callback funcion  
 
 ### getExternals(libsConfig)  
 Get the externals config by libsConfig  
-`libsConfig` - Object, libs packing config
+`libsConfig` - Object, libs packing config  
 `return` - the externals which will be used in pagesPack  
 
 ## Examples  
