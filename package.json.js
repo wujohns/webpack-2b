@@ -6,7 +6,7 @@
 const packageConfig = {
     // 基础说明配置
     name: 'webpack-2b',
-    version: '0.0.3',
+    version: '1.0.0',
     author: 'wujohns',
     description: 'a wrap of webpack for libs packing',
     homepage: 'https://github.com/wujohns/webpack-2b',
@@ -38,7 +38,7 @@ const packageConfig = {
      * scripts todo
      */
     scripts: {
-        // test: './node_modules/mocha/bin/mocha ./test/build.test.js'
+        test: './node_modules/mocha/bin/mocha ./test/build.test.js'
     },
 
     engine: {
@@ -56,6 +56,8 @@ const packageConfig = {
     },
 
     devDependencies: {
+        'mocha': '^3.5.0',
+        'chai': '^4.1.1',
         'uglifyjs-webpack-plugin': '^0.4.6'
     }
 };
