@@ -77,9 +77,9 @@ class Webpack2B {
                     window.${ globalField } = window.${ globalField } || {};
                 `;
 
-                // 包的引入以及文件内容拼接
+                // import packages and concat the content
                 _.forEach(libs, (lib) => {
-                    // 在临时文件中的 import 路径
+                    // the path in temp file
                     const libSrc = Webpack2B._getResolvePath(lib.src, saveDir);
                     const libVarName = `${ globalField }_${ stringHash(lib.expose).toString(36) }`;
                     tempFileContent = `
@@ -103,7 +103,8 @@ class Webpack2B {
                     output: {
                         path: saveDir,
                         filename: `${ saveBasename }${ saveExtname }`
-                    }
+                    },
+                    externals: libsConfig.externals
                 }, webpackConfig), callback);
             }],
             // clear temp file

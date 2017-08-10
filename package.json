@@ -1,6 +1,6 @@
 {
   "name": "webpack-2b",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "wujohns",
   "description": "a wrap of webpack for libs packing",
   "homepage": "https://github.com/wujohns/webpack-2b",
