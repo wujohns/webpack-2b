@@ -90,12 +90,14 @@ packing the libs file
 `callback` - Function, callback funcion  
 
 ### pagesPack(pagesConfig, [webpackConfig], callback)  
+**notice** the pagesPack func of the webpack-2b in version 1.x has structure bug, please use webpack-2b >=2.0.0  
 packing the page files  
 `pagesConfig` - Object, pages packing config  
 `pagesConfig.pages` - Array, the config array, each item is the config of a page  
-`pagesConfig.[pages].src` - String, the source path of the pages  
-`pagesConfig.[pages].dest` - String, the custom name of the page  
+`pagesConfig.[pages].src` - Array, the source path of the page  
+`pagesConfig.[pages].name` - String, the file name of the page  
 `pagesConfig.externals` - Object, the externals lib which will not be packed into the dest file  
+`pagesConfig.destDir` - String, the save directory of the page  
 `webpackConfig` - String, custom webpack config except entry and output, excepts entry, output, externals   
 `callback` - Function, callback funcion  
 

@@ -4,8 +4,12 @@
  * @author wujohns
  * @date 17/8/8
  */
+'use strict';
 
 import async from 'async';
+import homeSon from './home_son';
+
+homeSon.show();
 
 async.map([1000, 2000, 3000], function (delay, callback) {
     setTimeout(function () {

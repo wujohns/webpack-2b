@@ -20,10 +20,11 @@ const libsConfig = {
 
 const pagesConfig = {
     pages: [
-        { src: ['./src/home.js'], dest: './dest/home.js' },
-        { src: ['./src/profile.js'], dest: './dest/profile.js' }
+        { src: ['./src/home.js'], name: 'home' },
+        { src: ['./src/profile.js'], name: 'profile' }
     ],
-    externals: webpack2b.getExternals(libsConfig)
+    externals: webpack2b.getExternals(libsConfig),
+    destDir: './dest'
 };
 
 const webpackConfig = {

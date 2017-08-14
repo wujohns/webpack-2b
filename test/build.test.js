@@ -23,9 +23,10 @@ describe('build', () => {
 
     const pagesConfig = {
         pages: [
-            { src: ['./examples/src/home.js'], dest: './test/home.js' },
-            { src: ['./examples/src/profile.js'], dest: './test/profile.js' }
+            { src: ['./examples/src/home.js'], name: 'home' },
+            { src: ['./examples/src/profile.js'], name: 'profile' }
         ],
+        destDir: './test',
         externals: webpack2b.getExternals(libsConfig)
     };
 

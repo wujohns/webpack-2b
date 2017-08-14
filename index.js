@@ -133,9 +133,10 @@ class Webpack2B {
     /**
      * @param {Object} pagesConfig - pages' packing config
      * @param {Array} pagesConfig.pages - the config array, each item is the config of a page
-     * @param {Array} pagesConfig.[pages].src - the source path of the pages
-     * @param {String} pagesConfig.[pages].dest - the custom name of the page
+     * @param {Array} pagesConfig.[pages].src - the source path of the page
+     * @param {String} pagesConfig.[pages].name - the file name of the page
      * @param {Object} pagesConfig.externals - the externals lib which will not be packed into the dest file
+     * @param {String} pagesConfig.destDir - the save directory of the page
      * @param {Object} webpackConfig - custom webpack config except entry, output and externals
      * @param {Function} callback - callback function
      */
@@ -145,31 +146,27 @@ class Webpack2B {
             webpackConfig = {};
         }
 
+        let destDir = pagesConfig.destDir;
+        if (!path.isAbsolute(destDir)) {
+            destDir = path.join(process.cwd(), pagesConfig.destDir);
+        }
+
         const pages = pagesConfig.pages;
         const externals = pagesConfig.externals;
 
-        async.map(pages, (page, callback) => {
-            let pageDest = page.dest;
-            if (!path.isAbsolute(pageDest)) {
-                pageDest = path.join(process.cwd(), pageDest);
+        const entry = {};
+        _.forEach(pages, (page, callback) => {
+            entry[page.name] = page.src;
+        });
+
+        webpack(_.defaults({
+            entry: entry,
+            externals: externals,
+            output: {
+                path: destDir,
+                filename: '[name].js'
             }
-
-            const pageDestDir = path.dirname(pageDest);
-            const pageExtname = path.extname(pageDest);
-            const pageBasename = path.basename(pageDest, pageExtname);
-
-            const entry = {};
-            entry[pageBasename] = page.src;
-
-            webpack(_.defaults({
-                entry: entry,
-                externals: pagesConfig.externals,
-                output: {
-                    path: pageDestDir,
-                    filename: '[name].js'
-                }
-            }, webpackConfig), callback);
-        }, (err) => callback(err));
+        }, webpackConfig), callback);
     }
 }
 
