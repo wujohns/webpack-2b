@@ -85,7 +85,8 @@ class Webpack2B {
                     tempFileContent = `
                         ${ tempFileContent }
                         import ${ libVarName } from '${ libSrc }';
-                        window.${ globalField }['${ lib.expose }'] = ${ libVarName };
+                        import * as _${ libVarName } from '${ libSrc }';
+                        window.${ globalField }['${ lib.expose }'] = ${ libVarName } || _${ libVarName };
                     `;
                 });
 
