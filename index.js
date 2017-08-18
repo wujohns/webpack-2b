@@ -99,8 +99,10 @@ class Webpack2B {
             },
             // create the target libs file by using webpack
             build: ['tempLib', (results, callback) => {
+                const entry = {};
+                entry[saveBasename] = [tempPath];
                 webpack(_.defaults({
-                    entry: tempPath,
+                    entry: entry,
                     output: {
                         path: saveDir,
                         filename: `${ saveBasename }${ saveExtname }`
