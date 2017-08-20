@@ -86,7 +86,7 @@ packing the libs file
 `libsConfig.[libs].expose` - String, the custom name of the lib  
 `libsConfig.savePath` - String, the saving directory of the packed file  
 `libsConfig.globalField` - String, global variable（defaults: 'WEBPACK_2B', whick means window.WEBPACK_2B）  
-`webpackConfig` - String, custom webpack config except entry and output, excepts entry, output  
+`webpackConfig` - Object, custom webpack config excepts entry and output  
 `callback` - Function, callback funcion  
 
 ### pagesPack(pagesConfig, [webpackConfig], callback)  
@@ -98,7 +98,7 @@ packing the page files
 `pagesConfig.[pages].name` - String, the file name of the page  
 `pagesConfig.externals` - Object, the externals lib which will not be packed into the dest file  
 `pagesConfig.destDir` - String, the save directory of the page  
-`webpackConfig` - String, custom webpack config except entry and output, excepts entry, output, externals   
+`webpackConfig` - String, custom webpack config excepts entry, output, externals   
 `callback` - Function, callback funcion  
 
 ### getExternals(libsConfig)  

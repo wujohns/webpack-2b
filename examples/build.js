@@ -6,6 +6,7 @@
  */
 'use strict';
 
+const fs = require('fs');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const webpack2b = require('../index.js');
 
@@ -32,6 +33,14 @@ const webpackConfig = {
         new UglifyJsPlugin()
     ]
 };
+
+try {
+    fs.readdirSync('./dest');
+} catch (err) {
+    if (err) {
+        fs.mkdirSync('./dest');
+    }
+}
 
 webpack2b.libsPack(libsConfig, webpackConfig, (err) => {
     // do nothing
